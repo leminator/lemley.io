@@ -1,0 +1,17 @@
+theme = "congo"
+baseURL = "https://lemley.io/"
+defaultContentLanguage = "en"
+
+[params]
+  customCSS = ["assets/css/main.css"]
+
+enableRobotsTXT = true
+paginate = 10
+summaryLength = 0
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[[module.mounts]]
+source = 'static'
+target = 'static'

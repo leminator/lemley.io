@@ -1,0 +1,5 @@
+{{ $readingTime := .ReadingTime }}
+<span title="{{ i18n "article.reading_time_title" }}" class="reading-time text-base text-neutral-500 dark:text-neutral-400">
+  {{ $readingTime }} {{ if eq $readingTime 1 }}minute{{ else }}minutes{{ end }} to read
+</span>
+{{- /* Trim EOF */ -}}

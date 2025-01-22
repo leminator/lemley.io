@@ -1,0 +1,255 @@
+/*! Congo v2.8.2 | MIT License | https://github.com/jpanther/congo */
+
+@tailwind base;
+@tailwind components;
+
+/* Standardize image size for markdown content within posts */
+.post-content img.standard-image, .markdown img.standard-image {
+    width: 250px !important;
+    height: 200px !important;
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* Reset styles for author images to prevent resizing issues */
+.author img {
+    width: auto !important;
+    height: auto !important;
+    display: inline !important;
+    margin: 0 !important;
+}
+
+/* Additional Tailwind and other styling rules... */
+body a,
+body button {
+  @apply transition-colors;
+}
+
+.icon svg {
+  @apply h-[1em] w-[1em];
+}
+
+#search-query::-webkit-search-cancel-button,
+#search-query::-webkit-search-decoration,
+#search-query::-webkit-search-results-button,
+#search-query::-webkit-search-results-decoration {
+  @apply hidden;
+}
+
+body:has(#menu-controller:checked) {
+  @apply h-screen overflow-hidden;
+}
+#menu-button:has(#menu-controller:checked) {
+  @apply invisible;
+}
+#menu-controller:checked ~ #menu-wrapper {
+  @apply visible opacity-100;
+}
+
+.prose blockquote {
+  @apply rtl:border-l-0 rtl:border-r-4 rtl:pr-4;
+}
+.prose ul > li,
+.prose ol > li {
+  @apply rtl:mr-7 rtl:pl-0 rtl:pr-2;
+}
+.prose ol > li:before,
+.prose ul > li:before {
+  @apply rtl:left-auto rtl:right-1;
+}
+.prose thead td:first-child,
+.prose thead th:first-child {
+  @apply rtl:pr-0;
+}
+.prose thead td:last-child,
+.prose thead th:last-child {
+  @apply rtl:pl-0;
+}
+
+.prose div.min-w-0.max-w-prose > *:first-child {
+  @apply mt-3;
+}
+
+.toc {
+  max-height: 100vh;
+  overflow-y: auto;
+  padding-bottom: 50px;
+}
+
+.toc ul,
+.toc li {
+  @apply list-none px-0 leading-snug;
+}
+.toc ul ul {
+  @apply ps-4;
+}
+.toc a {
+  @apply font-normal text-neutral-700 dark:text-neutral-400;
+}
+.toc ul > li {
+  @apply rtl:mr-0;
+}
+
+.highlight-wrapper {
+  @apply block;
+}
+.highlight {
+  @apply relative z-0;
+}
+.highlight:hover > .copy-button {
+  @apply visible;
+}
+.copy-button {
+  @apply invisible absolute right-0 top-0 z-10 w-20 cursor-pointer whitespace-nowrap rounded-bl-md rounded-tr-md bg-neutral-200 py-1 font-mono text-sm text-neutral-700 opacity-90 dark:bg-neutral-600 dark:text-neutral-200;
+}
+.copy-button:hover,
+.copy-button:focus,
+.copy-button:active,
+.copy-button:active:hover {
+  @apply bg-primary-100 dark:bg-primary-600;
+}
+.copy-textarea {
+  @apply absolute -z-10 opacity-5;
+}
+
+.katex-display {
+  overflow: auto hidden;
+}
+
+table {
+  @apply block overflow-auto md:table;
+}
+
+code {
+  word-wrap: break-word;
+  @apply break-words;
+}
+
+.chroma {
+  @apply rounded-md bg-neutral-50 py-3 text-neutral-700 dark:bg-neutral-700 dark:text-neutral-200;
+}
+.chroma pre {
+  @apply m-0 p-0;
+}
+.chroma .lntable {
+  @apply m-0 block w-auto overflow-auto text-base;
+}
+.chroma .lnt,
+.chroma .ln {
+  @apply mr-2 px-2 text-neutral-600 dark:text-neutral-300;
+}
+.chroma .lntd {
+  @apply p-0 align-top;
+}
+.chroma .lntd:last-of-type {
+  @apply w-full;
+}
+.chroma .hl {
+  @apply block w-full bg-primary-100 dark:bg-primary-900;
+}
+.chroma .k,
+.chroma .kd,
+.chroma .kn,
+.chroma .kp,
+.chroma .kr,
+.chroma .nc,
+.chroma .fm,
+.chroma .nn,
+.chroma .vc,
+.chroma .o {
+  @apply text-primary-600 dark:text-primary-300;
+}
+.chroma .kc {
+  @apply font-semibold text-secondary-400 dark:text-secondary-500;
+}
+.chroma .kt,
+.chroma .nv,
+.chroma .vi,
+.chroma .vm,
+.chroma .m,
+.chroma .mb,
+.chroma .mf,
+.chroma .mh,
+.chroma .mi,
+.chroma .il,
+.chroma .mo {
+  @apply text-secondary-400 dark:text-secondary-600;
+}
+.chroma .n,
+.chroma .nd,
+.chroma .ni,
+.chroma .nl {
+  @apply text-secondary-900 dark:text-secondary-200;
+}
+.chroma .na,
+.chroma .nb,
+.chroma .bp,
+.chroma .nx {
+  @apply text-secondary-800 dark:text-secondary-300;
+}
+.chroma .no,
+.chroma .ne,
+.chroma .vg {
+  @apply font-semibold text-secondary-400 dark:text-secondary-500;
+}
+.chroma .nf {
+  @apply text-secondary-600 dark:text-secondary-500;
+}
+.chroma .l,
+.chroma .ld,
+.chroma .s,
+.chroma .sa,
+.chroma .sb,
+.chroma .sc,
+.chroma .dl,
+.chroma .sd,
+.chroma .s2,
+.chroma .sh,
+.chroma .si,
+.chroma .sx,
+.chroma .s1,
+.chroma .gi,
+.chroma .go,
+.chroma .gp {
+  @apply text-primary-800 dark:text-primary-400;
+}
+.chroma .se {
+  @apply font-semibold text-secondary-400 dark:text-secondary-500;
+}
+.chroma .sr,
+.chroma .ss {
+  @apply font-semibold text-primary-800 dark:text-primary-400;
+}
+.chroma .ow {
+  @apply font-semibold text-primary-400 dark:text-primary-600;
+}
+.chroma .c,
+.chroma .cm,
+.chroma .c1,
+.chroma .cs,
+.chroma .cp,
+.chroma .cpf {
+  @apply italic text-neutral-500 dark:text-neutral-400;
+}
+.chroma .ch {
+  @apply font-semibold italic text-neutral-500 dark:text-neutral-400;
+}
+.chroma .ge {
+  @apply italic;
+}
+.chroma .gh {
+  @apply font-semibold text-neutral-500;
+}
+.chroma .gs {
+  @apply font-semibold;
+}
+.chroma .gu,
+.chroma .gt {
+  @apply text-neutral-500;
+}
+.chroma .gl {
+  @apply underline;
+}
+
+@tailwind utilities;
